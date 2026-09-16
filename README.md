@@ -1,10 +1,24 @@
-# Astro Starter Kit: Minimal
+# Kōbō Workshop
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Welcome to Kōbō, my portfolio, here you will find almost everything about me, going through my philosophy, hobbies, featured 
+projects and my work experience.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Everything crafted and developed with precision, following the Wabi-Sabi philosophy, using a japanese inspired theme for both
+light and dark main themes
+
+# What to find here?
+
+Here you will know more about me as a backend software engineer and as a person
+
+Some things that you should find:
+
+1. Featured Projects
+2. What kind of philosophy do I follow in my daily life
+3. About me
+4. Mi journey through this world called software engineering
+5. Some easter egg (you should try konami code, who knows)
+6. My hobbies and what I do outside coding
+7. And a way to contact me and make your ideas come to life 
 
 ## 🚀 Project Structure
 
@@ -37,7 +51,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
