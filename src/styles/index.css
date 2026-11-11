@@ -1,0 +1,10 @@
+@layer reset, tokens, base, layout, components, utilities;
+
+@import '@tokens/_colors.css' layer(tokens);
+@import '@tokens/_typography.css' layer(tokens);
+
+h1 {
+  color: var(--color-success);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+}
