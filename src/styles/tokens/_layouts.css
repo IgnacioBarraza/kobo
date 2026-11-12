@@ -1,0 +1,29 @@
+:root {
+  --container-max: 1280px;
+  --container-width: calc(var(--container-max) + var(--space-16) * 2);
+
+  --layout-measure: 66ch;
+
+  --navbar-height: var(--space-16);
+
+  --section-gap: clamp(var(--space-24), 12vw, var(--space-40));
+
+  --grid-gutter: var(--spacing-6);
+  --grid-columns: 12;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --page-padding: var(--spacing-10);
+    --grid-gutter: var(--spacing-5);
+    --grid-columns: 8;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --page-padding: var(--spacing-5);
+    --grid-gutter: var(--spacing-4);
+    --grid-columns: 4;
+  }
+}

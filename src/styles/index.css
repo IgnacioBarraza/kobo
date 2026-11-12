@@ -3,10 +3,16 @@
 @import '@tokens/_colors.css' layer(tokens);
 @import '@tokens/_typography.css' layer(tokens);
 @import '@tokens/_spacing.css' layer(tokens);
+@import '@tokens/_layouts.css' layer(tokens);
+@import '@tokens/_borders.css' layer(tokens);
 
 div {
   color: var(--color-success);
   font-family: var(--font-display);
   font-size: var(--text-xl);
   border: var(--spacing-1) solid var(--color-success);
+  border-radius: var(--radius-full);
+  width: 100px;
+  height: 100px;
+  box-shadow: var(--shadow-overlay);
 }

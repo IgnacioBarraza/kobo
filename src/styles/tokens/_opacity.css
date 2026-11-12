@@ -1,0 +1,9 @@
+:root {
+  --opacity-transparent: 0;
+  --opacity-shadow-washi: 0.35;
+  --opacity-shadow-sumi: 0.65;
+  --opacity-decorative: 0.7;
+  --opacity-scrim-overlay: 0.7;
+  --opacity-scrim-navbar: 0.88;
+  --opacity-opaque: 1;
+}

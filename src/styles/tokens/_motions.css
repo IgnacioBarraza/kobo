@@ -1,0 +1,21 @@
+:root {
+  --duration-instant: 0ms;
+  --duration-fast: 120ms;
+  --duration-normal: 240ms;
+  --duration-slow: 400ms;
+  --duration-emphasis: 600ms;
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-reduced: 0.01ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: var(--duration-reduced) !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: var(--duration-reduced) !important;
+    scroll-behavior: auto !important;
+  }
+}

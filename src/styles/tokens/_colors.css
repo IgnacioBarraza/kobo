@@ -23,7 +23,9 @@
   --color-border: #ddd9d0;
   --color-border-subtle: #e9e6de;
 
-  --color-shadow-overlay: #141412;
+  --color-shadow-overlay: rgb(20 20 18 / var(--opacity-shadow-washi));
+
+  --shadow-overlay: 0 24px 64px −24px var(--color-shadow-overlay);
 }
 
 [data-theme='dark'] {
@@ -40,5 +42,7 @@
   --color-border: #35332d;
   --color-border-subtle: #292822;
 
-  --color-shadow-overlay: #000;
+  --color-shadow-overlay: rgb(0 0 0 / var(--opacity-shadow-sumi));
+
+  --shadow-overlay: 0 24px 64px −24px var(--color-shadow-overlay);
 }
