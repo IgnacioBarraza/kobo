@@ -2,9 +2,11 @@
 
 @import '@tokens/_colors.css' layer(tokens);
 @import '@tokens/_typography.css' layer(tokens);
+@import '@tokens/_spacing.css' layer(tokens);
 
-h1 {
+div {
   color: var(--color-success);
   font-family: var(--font-display);
   font-size: var(--text-xl);
+  border: var(--spacing-1) solid var(--color-success);
 }
