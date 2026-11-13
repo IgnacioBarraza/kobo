@@ -1,5 +1,9 @@
 @layer reset, tokens, base, layout, components, utilities;
 
+/* #################### RESET ################### */
+@import '@base/reset.css' layer(reset);
+
+/* ################### TOKENS ################### */
 @import '@tokens/color.css' layer(tokens);
 @import '@tokens/typography.css' layer(tokens);
 @import '@tokens/spacing.css' layer(tokens);
@@ -9,13 +13,9 @@
 @import '@tokens/layering.css' layer(tokens);
 @import '@tokens/motion.css' layer(tokens);
 
-div {
-  color: var(--color-success);
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  border: var(--spacing-1) solid var(--color-success);
-  border-radius: var(--radius-full);
-  width: 100px;
-  height: 100px;
-  box-shadow: var(--shadow-overlay);
-}
+/* #################### BASE ################### */
+@import '@base/font.css' layer(base);
+@import '@base/global.css' layer(base);
+
+/* ################## UTILITIES ################# */
+/* @import '@base/grid.css' layer(layout); */

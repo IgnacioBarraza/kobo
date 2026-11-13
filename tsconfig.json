@@ -5,6 +5,7 @@
   "compilerOptions": {
     "paths": {
       "@tokens/*": ["./src/styles/tokens/*"],
+      "@base/*": ["./src/styles/base/*"],
       "@components/*": ["./src/components/*"]
     }
   }
