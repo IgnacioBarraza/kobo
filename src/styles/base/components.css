@@ -1,12 +1,18 @@
-.kbd {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.kbd,
+.tag {
   border: var(--border-width) solid var(--border-color-default);
-  border-radius: var(--radius-sm);
-  padding: 2px 6px;
-
   font-family: var(--font-mono);
   font-size: var(--text-body-xs);
+}
+
+.kbd {
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
   color: var(--text-muted);
+}
+
+.tag {
+  padding: 2px 12px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
 }
