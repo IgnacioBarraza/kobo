@@ -16,12 +16,9 @@
   --color-surface: #fdfcfa;
   --color-surface-subtle: #f1efe9;
 
-  --color-text-primary: #1c1c1a;
-  --color-text-secondary: #5f5d57;
-  --color-text-muted: #89867e;
-
-  --color-border: #ddd9d0;
-  --color-border-subtle: #e9e6de;
+  --text-primary: #1c1c1a;
+  --text-secondary: #5f5d57;
+  --text-muted: #89867e;
 
   --color-shadow-overlay: rgb(20 20 18 / var(--opacity-shadow-washi));
 
@@ -35,12 +32,9 @@
   --color-surface: #1c1c1a;
   --color-surface-subtle: #24231f;
 
-  --color-text-primary: #f1efe9;
-  --color-text-secondary: #b8b4aa;
-  --color-text-muted: #817d73;
-
-  --color-border: #35332d;
-  --color-border-subtle: #292822;
+  --text-primary: #f1efe9;
+  --text-secondary: #b8b4aa;
+  --text-muted: #817d73;
 
   --color-shadow-overlay: rgb(0 0 0 / var(--opacity-shadow-sumi));
 

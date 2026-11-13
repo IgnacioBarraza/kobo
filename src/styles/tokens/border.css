@@ -12,13 +12,13 @@
 [data-theme='light'] {
   color-scheme: light;
 
-  --border-color-default: #35332d;
-  --border-color-subtle: #292822;
+  --border-color-default: #ddd9d0;
+  --border-color-subtle: #e9e6de;
 }
 
 [data-theme='dark'] {
   color-scheme: dark;
 
-  --border-color-default: #ddd9d0;
-  --border-color-subtle: #e9e6de;
+  --border-color-default: #35332d;
+  --border-color-subtle: #292822;
 }
