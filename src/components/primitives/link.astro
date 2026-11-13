@@ -1,0 +1,32 @@
+---
+import { MoveUpRight, MoveRight } from '@lucide/astro'
+import { ICON_SIZE } from '@components/shared/icon-sizes'
+
+interface Link {
+  href: string
+  label: string
+}
+
+interface Props {
+  link: Link
+  type: 'internal' | 'external' | 'external quiet'
+}
+
+const { link, type } = Astro.props
+
+console.log(type)
+---
+
+<a
+  href={link.href}
+  target="_blank"
+  class:list={['link', type === 'external quiet' ? 'external-quiet' : '']}
+  aria-label={link.label}
+>
+  {link.label}
+  {type === 'internal' ? (
+    <MoveRight size={ICON_SIZE.sm} />
+  ) : (
+    <MoveUpRight size={ICON_SIZE.sm} />
+  )}
+</a>

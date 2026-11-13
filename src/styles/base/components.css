@@ -16,3 +16,23 @@
   border-radius: var(--radius-full);
   color: var(--text-secondary);
 }
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+
+  border-bottom: var(--border-width-md) solid var(--border-color-default);
+}
+
+.link:hover {
+  color: var(--color-accent);
+  border-bottom: var(--border-width-md) solid var(--color-accent);
+}
+
+.link.external-quiet,
+.link.external-quiet:hover {
+  border-bottom: none;
+}
