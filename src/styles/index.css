@@ -19,3 +19,4 @@
 
 /* ################## UTILITIES ################# */
 /* @import '@base/grid.css' layer(layout); */
+@import '@base/components.css' layer(components);

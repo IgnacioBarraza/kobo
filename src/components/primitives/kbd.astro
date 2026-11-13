@@ -1,0 +1,15 @@
+---
+import { Command } from '@lucide/astro'
+import { ICON_SIZE } from '@components/shared/icon-sizes'
+
+const isApple = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
+---
+
+{isApple ? (
+  <div class="kbd">
+    <Command size={ICON_SIZE.xs} />
+    <span>K</span>
+  </div>
+) : (
+  <span class="kbd">CTRL k</span>
+)}
