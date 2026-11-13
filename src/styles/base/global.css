@@ -1,11 +1,11 @@
-html {
-  color-scheme: light;
-}
-
 body {
   font-family: var(--font-sans);
   font-size: var(--text-body-md);
   line-height: var(--leading-body);
   color: var(--color-text-primary);
   background-color: var(--color-background);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
