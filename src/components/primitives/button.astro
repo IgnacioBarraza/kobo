@@ -1,0 +1,17 @@
+---
+import { Copy } from '@lucide/astro'
+import { ICON_SIZE } from '@components/shared/icon-sizes'
+
+interface Props {
+  label: string
+}
+
+const { label } = Astro.props
+---
+
+<button class="btn">
+  <div class="btn-text">
+    <Copy size={ICON_SIZE.sm} />
+    <span>{label}</span>
+  </div>
+</button>

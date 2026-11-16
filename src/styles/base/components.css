@@ -36,3 +36,27 @@
 .link.external-quiet:hover {
   border-bottom: none;
 }
+
+.btn {
+  background: none;
+  padding: 12px 20px;
+
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  color: var(--text-primary);
+
+  border: var(--border-width) solid var(--border-color-default);
+  border-radius: var(--radius-sm);
+}
+
+.btn:hover {
+  border-color: var(--text-primary);
+}
+
+.btn-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: var(--spacing-2);
+}
