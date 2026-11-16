@@ -1,17 +1,56 @@
 ---
-import { Copy } from '@lucide/astro'
 import { ICON_SIZE } from '@components/shared/icon-sizes'
+import { Check, Copy } from '@lucide/astro'
 
 interface Props {
   label: string
+  email: string
+  copiedLabel: string
 }
 
-const { label } = Astro.props
+const { label, email, copiedLabel } = Astro.props
 ---
 
-<button class="btn">
-  <div class="btn-text">
-    <Copy size={ICON_SIZE.sm} />
-    <span>{label}</span>
-  </div>
+<button type="button" class="btn-email" data-email={email}>
+  <span class="btn-text">
+    <Copy size={ICON_SIZE.sm} class="icon-copy" aria-hidden="true" />
+    <Check size={ICON_SIZE.sm} class="icon-check" aria-hidden="true" />
+    <span class="label-text">{label}</span>
+    <span class="copied-label-text" aria-live="polite">
+      {copiedLabel}
+    </span>
+  </span>
 </button>
+
+<script>
+  function copyEmail() {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.btn-email')
+
+    buttons.forEach((button) => {
+      if (button.dataset.initialized === 'true') return
+      button.dataset.initialized = 'true'
+
+      let timeoutId: ReturnType<typeof setTimeout>
+
+      button.addEventListener('click', async () => {
+        const email = button.getAttribute('data-email')
+        if (!email) return
+
+        try {
+          await navigator.clipboard.writeText(email)
+          button.classList.add('copied')
+
+          clearTimeout(timeoutId)
+          timeoutId = setTimeout(() => {
+            button.classList.remove('copied')
+          }, 5000)
+        } catch (error) {
+          console.error('Error al copiar al portapapeles:', error)
+        }
+      })
+    })
+  }
+
+  copyEmail()
+  document.addEventListener('astro:after-swap', copyEmail)
+</script>
