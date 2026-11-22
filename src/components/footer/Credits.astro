@@ -1,0 +1,18 @@
+---
+import Kbd from '@components/primitives/Kbd.astro'
+import { siteConfig } from '@config'
+import { Site } from '../../data/kobo'
+
+const year = new Date().getFullYear()
+---
+
+<div class="credits-footer">
+  <div class="divisor"></div>
+  <div class="kobo-credits">
+    <span class="credits-name">
+      &copy; {year} - {siteConfig.name}
+    </span>
+    <span class="kobo-kanji">{Site.kanji}</span>
+    <Kbd />
+  </div>
+</div>

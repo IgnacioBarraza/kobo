@@ -1,0 +1,28 @@
+---
+import type { Link as LinkInterface } from '@components/shared/interfaces'
+import { Site } from '../../data/kobo'
+import Link from '@components/primitives/Link.astro'
+
+const links: LinkInterface[] = [
+  {
+    href: 'https://github.com/IgnacioBarraza',
+    label: 'Github'
+  },
+  {
+    href: Site.linkedin,
+    label: 'LinkedIn'
+  }
+]
+---
+
+<div class="kobo-footer">
+  <div class="kobo-info">
+    <span class="footer-name">{Site.name}</span>
+    <span class="footer-tagline">{Site.tagline}</span>
+  </div>
+  <div class="footer-action-btns">
+    {links.map((link) => (
+      <Link link={link} type="external quiet" />
+    ))}
+  </div>
+</div>
