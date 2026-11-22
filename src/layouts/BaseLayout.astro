@@ -1,0 +1,35 @@
+---
+import '@styles/index.css'
+import NavBar from '@components/navbar/NavBar.astro'
+import SEO from '@components/shared/Seo.astro'
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  noIndex?: boolean
+}
+
+const props = Astro.props
+---
+
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <SEO {...props} />
+    <script is:inline>
+      const savedTheme = localStorage.getItem('theme')
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme)
+      }
+    </script>
+  </head>
+  <body>
+    <NavBar />
+    <div class="">
+      <slot />
+    </div>
+  </body>
+</html>

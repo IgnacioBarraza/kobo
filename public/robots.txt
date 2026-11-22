@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://codebynacho.com/sitemap-index.xml

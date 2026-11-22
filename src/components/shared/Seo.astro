@@ -1,0 +1,58 @@
+---
+import { siteConfig } from '@config'
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  noIndex?: boolean
+}
+
+const {
+  title = siteConfig.title,
+  description = siteConfig.description,
+  image = siteConfig.defaultOgImage,
+  noIndex = false
+} = Astro.props
+
+const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).toString()
+
+const pageTitle = title.includes(siteConfig.name)
+  ? title
+  : `${title} | ${siteConfig.name}`
+
+const imageUrl = new URL(image, siteConfig.url).toString()
+---
+
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+
+<link rel="canonical" href={canonicalUrl} />
+
+<meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={siteConfig.name} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:alt" content={`${siteConfig.name} portfolio`} />
+<meta property="og:locale" content={siteConfig.locale} />
+
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<script is:inline>
+  const savedTheme = localStorage.getItem('theme')
+
+  const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
+    .matches
+    ? 'dark'
+    : 'light'
+
+  document.documentElement.dataset.theme =
+    savedTheme === 'light' || savedTheme === 'dark'
+      ? savedTheme
+      : preferredTheme
+</script>
