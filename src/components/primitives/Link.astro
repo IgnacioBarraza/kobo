@@ -1,11 +1,7 @@
 ---
 import { MoveUpRight, MoveRight } from '@lucide/astro'
 import { ICON_SIZE } from '@components/shared/icon-sizes'
-
-interface Link {
-  href: string
-  label: string
-}
+import type { Link } from '@components/shared/interfaces'
 
 interface Props {
   link: Link
@@ -14,7 +10,7 @@ interface Props {
 
 const { link, type } = Astro.props
 
-console.log(type)
+// console.log(type)
 ---
 
 <a

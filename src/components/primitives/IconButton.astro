@@ -1,0 +1,14 @@
+---
+import { icons } from '@lucide/astro'
+
+interface Props {
+  icon: keyof typeof icons
+  iconSize: number
+}
+
+const { icon, iconSize } = Astro.props
+
+const Icon = icons[icon]
+---
+
+<Icon size={iconSize} />
