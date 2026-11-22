@@ -1,0 +1,9 @@
+---
+import { ICON_SIZE } from '@components/shared/icon-sizes'
+import { Search } from '@lucide/astro'
+---
+
+<button class="palette-trigger">
+  <Search size={ICON_SIZE.md} />
+  <slot />
+</button>
