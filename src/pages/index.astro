@@ -1,7 +1,36 @@
 ---
+import type { Link as LinkInterface } from '@components/shared/interfaces'
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Link from '@components/primitives/Link.astro'
+import { siteConfig } from '@config'
+
+const link: LinkInterface = {
+  label: 'Explore projects',
+  href: '/projects/'
+}
 ---
 
 <BaseLayout>
-  <h1>Home</h1>
+  <div class="home-container">
+    <section class="software-engineer-section">
+      <div class="grid">
+        <div class="hero-body">
+          <p class="label">01 / SOFTWARE ENGINEER</p>
+          <h1 class="hero-headline">Building things with intention.</h1>
+          <p class="hero-name">Ignacio Barraza</p>
+          <p class="hero-desc">{siteConfig.description}</p>
+          <Link link={link} type="internal" />
+        </div>
+        <aside class="hero-aside">
+          <div class="vertical-line"></div>
+          <div class="aside-info">
+            <span class="kobo-brand">工房 · kōbō</span>
+            <span class="kobo-workshop">Workshop · atelier</span>
+            <span class="kobo-location">Iquique, Chile · UTC-3</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <div class="separation-line"></div>
+  </div>
 </BaseLayout>
