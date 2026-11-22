@@ -13,7 +13,7 @@ interface Props {
 const props = Astro.props
 ---
 
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,8 +28,8 @@ const props = Astro.props
   </head>
   <body>
     <NavBar />
-    <div class="">
+    <main class="">
       <slot />
-    </div>
+    </main>
   </body>
 </html>
