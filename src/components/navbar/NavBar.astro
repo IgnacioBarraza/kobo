@@ -2,6 +2,8 @@
 import type { Link } from '@components/shared/interfaces'
 import NavLink from './NavLink.astro'
 import ThemeToggle from './ThemeToggle.astro'
+import PaletteTrigger from '@components/primitives/PaletteTrigger.astro'
+import Kbd from '@components/primitives/Kbd.astro'
 
 const links: Link[] = [
   { label: 'Projects', href: '/projects/' },
@@ -25,6 +27,9 @@ const currentPath = Astro.url.pathname
     ))}
   </nav>
   <div class="nav-action-btns">
+    <PaletteTrigger>
+      <Kbd />
+    </PaletteTrigger>
     <ThemeToggle />
   </div>
 </div>

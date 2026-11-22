@@ -15,7 +15,7 @@ const { link, type } = Astro.props
 
 <a
   href={link.href}
-  target="_blank"
+  target={type === 'external' ? '_blank' : ''}
   class:list={['link', type === 'external quiet' ? 'external-quiet' : '']}
   aria-label={link.label}
 >
