@@ -1,0 +1,30 @@
+---
+import type { Link } from '@components/shared/interfaces'
+import NavLink from './NavLink.astro'
+import ThemeToggle from './ThemeToggle.astro'
+
+const links: Link[] = [
+  { label: 'Projects', href: '/projects/' },
+  { label: 'Experience', href: '/experience/' },
+  { label: 'Expertise', href: '/expertise/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Contact', href: '/contact/' }
+]
+
+const currentPath = Astro.url.pathname
+---
+
+<div class="nav-container">
+  <a href="/" class="kobo-brand">
+    <span class="kobo-main">Kōbō</span>
+    <span class="kobo-secondary">工房</span>
+  </a>
+  <nav class="nav-bar">
+    {links.map((link) => (
+      <NavLink link={link} currentPath={currentPath} />
+    ))}
+  </nav>
+  <div class="nav-action-btns">
+    <ThemeToggle />
+  </div>
+</div>

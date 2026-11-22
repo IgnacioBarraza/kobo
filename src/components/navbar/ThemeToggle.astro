@@ -1,0 +1,51 @@
+---
+import IconButton from '@components/primitives/IconButton.astro'
+import { ICON_SIZE } from '@components/shared/icon-sizes'
+---
+
+<button id="toggle-btn" class="icon-btn" aria-label="Cambiar tema">
+  <span class="icon-moon">
+    <IconButton icon="Moon" iconSize={ICON_SIZE.toggle} />
+  </span>
+  <span class="icon-sun">
+    <IconButton icon="Sun" iconSize={ICON_SIZE.toggle} />
+  </span>
+</button>
+
+<style>
+  .icon-moon,
+  .icon-sun {
+    display: inline-flex;
+  }
+
+  .icon-sun {
+    display: none;
+  }
+
+  :global(html[data-theme='dark']) .icon-moon {
+    display: none;
+  }
+  :global(html[data-theme='dark']) .icon-sun {
+    display: inline-flex;
+  }
+</style>
+
+<script>
+  const themeToggle = () => {
+    const toggleBtn = document.getElementById('toggle-btn')
+
+    const html = document.documentElement
+
+    if (!toggleBtn) return
+
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme')
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+
+      html.setAttribute('data-theme', newTheme)
+      localStorage.setItem('theme', newTheme)
+    })
+  }
+
+  themeToggle()
+</script>

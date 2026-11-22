@@ -1,0 +1,28 @@
+---
+import type { Link } from '@components/shared/interfaces'
+
+interface Props {
+  link: Link
+  currentPath: string
+}
+
+const { link, currentPath } = Astro.props
+
+const normalizePath = (path: string) => {
+  if (path === '/') return path
+
+  return path.replace(/\/+$/, '')
+}
+
+const isActive = normalizePath(currentPath) === normalizePath(link.href)
+
+console.log(isActive)
+---
+
+<a
+  href={link.href}
+  class:list={['nav-link', { active: isActive }]}
+  aria-current={isActive ? 'page' : undefined}
+>
+  <span>{link.label}</span>
+</a>
