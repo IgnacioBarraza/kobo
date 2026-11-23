@@ -1,0 +1,30 @@
+---
+import type { Link as LinkInterface } from './interfaces'
+import Link from '@components/primitives/Link.astro'
+
+export interface SectionHeaderInterface {
+  label: string
+  title?: string
+  action?: LinkInterface
+}
+
+interface Props {
+  label: string
+  title?: string
+  action?: LinkInterface
+}
+
+const { label, title, action } = Astro.props
+---
+
+<div class="section-header-container">
+  <div class="section-header">
+    <span class="label">{label}</span>
+    <span class="title-section">{title}</span>
+  </div>
+  {action === undefined ? (
+    <span></span>
+  ) : (
+    <Link link={action} type="internal" />
+  )}
+</div>

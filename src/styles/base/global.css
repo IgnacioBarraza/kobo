@@ -15,7 +15,9 @@ body {
   padding-inline: var(--page-padding);
 }
 
-.software-engineer-section {
+.software-engineer-section,
+.introduction-section,
+.featured-projects-section {
   padding: 126px 78px;
 }
 
@@ -28,7 +30,8 @@ body {
     'a b';
 }
 
-.hero-body {
+.hero-body,
+.introduction-body {
   grid-area: a;
 }
 
@@ -93,4 +96,20 @@ body {
 .separation-line {
   width: 100%;
   border: var(--border-width) solid var(--border-color-subtle);
+}
+
+.introduction-desc,
+.introduction-desc-secondary {
+  font-family: var(--font-sans);
+  color: var(--text-secondary);
+  font-size: var(--text-body-lg);
+}
+
+.introduction-desc {
+  padding-top: var(--spacing-8);
+}
+
+.introduction-desc-secondary {
+  padding-top: 56px;
+  padding-bottom: var(--spacing-16);
 }

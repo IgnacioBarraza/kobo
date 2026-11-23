@@ -3,10 +3,28 @@ import type { Link as LinkInterface } from '@components/shared/interfaces'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Link from '@components/primitives/Link.astro'
 import { siteConfig } from '@config'
+import SectionHeader, {
+  type SectionHeaderInterface
+} from '@components/shared/SectionHeader.astro'
 
-const link: LinkInterface = {
-  label: 'Explore projects',
-  href: '/projects/'
+const link: LinkInterface[] = [
+  {
+    label: 'Explore projects',
+    href: '/projects/'
+  },
+  {
+    label: 'About me',
+    href: '/about/'
+  }
+]
+
+const featuredProjectSection: SectionHeaderInterface = {
+  label: '03 / SELECTED PROJECTS',
+  title: 'Selected work',
+  action: {
+    label: 'View all',
+    href: '/projects/'
+  }
 }
 ---
 
@@ -19,7 +37,7 @@ const link: LinkInterface = {
           <h1 class="hero-headline">Building things with intention.</h1>
           <p class="hero-name">Ignacio Barraza</p>
           <p class="hero-desc">{siteConfig.description}</p>
-          <Link link={link} type="internal" />
+          <Link link={link[0]} type="internal" />
         </div>
         <aside class="hero-aside">
           <div class="vertical-line"></div>
@@ -32,5 +50,29 @@ const link: LinkInterface = {
       </div>
     </section>
     <div class="separation-line"></div>
+    <section class="introduction-section">
+      <div class="grid">
+        <div class="introduction-body">
+          <p class="label">02 / INTRODUCTION</p>
+          <p class="introduction-desc">
+            I'm Ignacio, a software engineer from Chile who enjoys turning
+            complex problems into simple, maintainable software.
+          </p>
+          <p class="introduction-desc-secondary">
+            I work across the stack, with a particular interest in backend
+            systems, architecture, and developer tooling.
+          </p>
+          <Link link={link[1]} type="internal" />
+        </div>
+      </div>
+    </section>
+    <div class="separation-line"></div>
+    <section class="featured-projects-section">
+      <SectionHeader
+        label={featuredProjectSection.label}
+        title={featuredProjectSection.title}
+        action={featuredProjectSection.action}
+      />
+    </section>
   </div>
 </BaseLayout>
