@@ -6,6 +6,8 @@ import { siteConfig } from '@config'
 import SectionHeader, {
   type SectionHeaderInterface
 } from '@components/shared/SectionHeader.astro'
+import { Projects } from '../data/projects'
+import ProjectRow from '@components/projects/ProjectRow.astro'
 
 const link: LinkInterface[] = [
   {
@@ -26,6 +28,8 @@ const featuredProjectSection: SectionHeaderInterface = {
     href: '/projects/'
   }
 }
+
+const selectedProjects = Projects
 ---
 
 <BaseLayout>
@@ -73,6 +77,17 @@ const featuredProjectSection: SectionHeaderInterface = {
         title={featuredProjectSection.title}
         action={featuredProjectSection.action}
       />
+      <div class="project-row-component"></div>
+      <div class="separation-line"></div>
+      {selectedProjects.map((project) => (
+        <ProjectRow
+          projectName={project.name}
+          projectKind={project.kind}
+          projectStack={project.general_stack}
+          projectYear={project.year}
+          projectSlug={project.slug}
+        />
+      ))}
     </section>
   </div>
 </BaseLayout>
