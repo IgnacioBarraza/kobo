@@ -17,7 +17,9 @@ body {
 
 .software-engineer-section,
 .introduction-section,
-.featured-projects-section {
+.featured-projects-section,
+.philosophy-section,
+.experience-section {
   padding: 126px 78px;
 }
 
@@ -116,4 +118,42 @@ body {
 
 .project-row-component {
   padding-top: 32px;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas: 'a b c';
+  padding-top: var(--spacing-12);
+  gap: 132px;
+  padding-bottom: var(--spacing-24);
+}
+
+.philosophy-statement {
+  font-family: var(--font-display);
+  font-size: var(--text-headline-5xl);
+  color: var(--text-primary);
+  line-height: 1.2;
+  text-wrap: balance;
+  grid-column: 1 / 3;
+}
+
+.philosophy-support {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-md);
+  color: var(--text-secondary);
+  text-wrap: balance;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  grid-area: c;
+}
+
+.principle-component {
+  display: flex;
+  justify-content: space-between;
+}
+
+.experience-component {
+  padding-top: var(--spacing-10);
 }

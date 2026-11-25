@@ -7,7 +7,10 @@ import SectionHeader, {
   type SectionHeaderInterface
 } from '@components/shared/SectionHeader.astro'
 import { Projects } from '../data/projects'
-import ProjectRow from '@components/projects/ProjectRow.astro'
+import ProjectRow from '@components/content/ProjectRow.astro'
+import { Site } from '../data/kobo'
+import Principle from '@components/content/Principle.astro'
+import ExperienceEntry from '@components/content/ExperienceEntry.astro'
 
 const link: LinkInterface[] = [
   {
@@ -28,6 +31,63 @@ const featuredProjectSection: SectionHeaderInterface = {
     href: '/projects/'
   }
 }
+
+const experienceSection: SectionHeaderInterface = {
+  label: '05 / EXPERIENCE',
+  action: {
+    label: 'View experience',
+    href: '/experience/'
+  }
+}
+
+const principles = [
+  {
+    item: 'i',
+    name: 'Clarity',
+    description: 'Make complexity understandable.'
+  },
+  {
+    item: 'ii',
+    name: 'Craft',
+    description: 'Build with intention.'
+  },
+  {
+    item: 'iii',
+    name: 'Improvement',
+    description: 'Keep learning, keep refining.'
+  }
+]
+
+const experienceEntry = [
+  {
+    period: '2024 - NOW',
+    role: 'Full Stack Developer',
+    company: 'MapVx',
+    stack: [
+      'Node.js',
+      'TypeScript',
+      'Express',
+      'PostgreSQL',
+      'TypeORM',
+      'Redis',
+      'BullMQ',
+      'AWS',
+      'Docker',
+      'Angular'
+    ]
+  },
+  {
+    period: '2023 - 2024',
+    role: 'Front End Developer',
+    company: 'MapVx',
+    stack: ['Angular', 'TypeScript', 'RxJS', 'Firebase', 'Bootstrap']
+  },
+  {
+    period: 'Mar 2024 - Dec 2024',
+    role: 'Teaching Assistant – Engineering',
+    company: 'Universidad de Tarapacá'
+  }
+]
 
 const selectedProjects = Projects
 ---
@@ -89,5 +149,48 @@ const selectedProjects = Projects
         />
       ))}
     </section>
+    <div class="separation-line"></div>
+    <section class="philosophy-section">
+      <p class="label">04 / ENGINEERING PHILOSOPHY</p>
+      <div class="philosophy-grid">
+        <p class="philosophy-statement">{Site.tagline}</p>
+        <p class="philosophy-support">
+          I care about software that is easy to understand, maintain, and evolve
+          — not just software that works.
+        </p>
+      </div>
+      <div class="separation-line"></div>
+      <div class="principle-component">
+        {principles.map((principle, index) => (
+          <Principle
+            item={principle.item}
+            name={principle.name}
+            description={principle.description}
+            divider={index - 2 ? true : false}
+          />
+        ))}
+      </div>
+    </section>
+    <div class="separation-line"></div>
+    <section class="experience-section">
+      <SectionHeader
+        label={experienceSection.label}
+        action={experienceSection.action}
+      />
+      <div class="experience-component">
+        <div class="separation-line"></div>
+        {experienceEntry.map((entry) => (
+          <>
+            <ExperienceEntry
+              period={entry.period}
+              role={entry.role}
+              company={entry.company}
+              stack={entry.stack}
+            />
+          </>
+        ))}
+      </div>
+    </section>
+    <div class="separation-line"></div>
   </div>
 </BaseLayout>
