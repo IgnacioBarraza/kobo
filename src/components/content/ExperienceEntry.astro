@@ -1,0 +1,26 @@
+---
+import Tag from '@components/primitives/Tag.astro'
+import { undefined } from 'astro:schema'
+
+interface Props {
+  period: string
+  role: string
+  company: string
+  desc?: string
+  stack?: string[]
+}
+
+const { period, role, company, desc, stack } = Astro.props
+---
+
+<div class="experience-entry-container">
+  <span class="entry-period">{period}</span>
+  <div class="experience-entry">
+    <p class="experience-role">{role}</p>
+    <p class="experience-company">{company}</p>
+    {desc !== null ? null : <p class="experience-desc">{desc}</p>}
+    <div class="experience-stack">
+      {stack && stack.map((item) => <Tag>{item}</Tag>)}
+    </div>
+  </div>
+</div>
