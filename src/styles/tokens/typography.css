@@ -10,6 +10,7 @@
   --text-display-sm: clamp(1.75rem, 3.2vw, 2.5rem);
 
   --text-headline: 6rem;
+  --text-headline-5xl: 4.5rem;
   --text-heading-xxl: 2.5rem;
   --text-heading-xl: 2rem;
   --text-heading-lg: 1.75rem;

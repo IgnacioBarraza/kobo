@@ -266,7 +266,6 @@
   padding: 32px 0;
 
   border-bottom: var(--border-width-md) solid var(--border-color-subtle);
-  /* border-bottom: var(--border-width-md) solid var(--border-color-subtle); */
 }
 
 .project-name {
@@ -315,6 +314,95 @@
 .project-row-container:hover .project-name,
 .project-row-container:hover .year-icon {
   color: var(--color-accent);
+}
+
+.principle-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 32px;
+  justify-content: space-between;
+}
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  width: 377px;
+}
+
+.principle-item {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-xs);
+  color: var(--color-accent);
+  padding-bottom: var(--spacing-4);
+}
+
+.principle-name {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-lg);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding-bottom: 28px;
+}
+
+.principle-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+}
+
+.principle-divisor {
+  height: 67px;
+  border-right: var(--border-width-md) solid var(--border-color-subtle);
+}
+
+.experience-entry-container {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-areas: 'a b c';
+  padding: 40px 0;
+  border-bottom: var(--border-width-md) solid var(--border-color-subtle);
+}
+
+.entry-period {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-xs);
+  color: var(--text-muted);
+}
+
+.experience-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  grid-column: 2 / 4;
+}
+
+.experience-company,
+.experience-desc,
+.experience-role {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+}
+
+.experience-role {
+  font-size: var(--text-body-lg);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.experience-company {
+  color: var(--color-accent);
+  padding-top: var(--spacing-1);
+}
+
+.experience-desc {
+  padding-top: 20px;
+  color: var(--text-secondary);
+}
+
+.experience-stack {
+  padding-top: 20px;
+  display: flex;
+  gap: var(--spacing-2);
 }
 
 @media (max-width: 860px) {
