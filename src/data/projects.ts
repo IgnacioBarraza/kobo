@@ -1,4 +1,6 @@
-export const Projects = [
+import type { ProjectsInterface } from '@components/shared/interfaces'
+
+export const Projects: ProjectsInterface[] = [
   {
     name: 'Hyōsei',
     slug: 'hyosei',
