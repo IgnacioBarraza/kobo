@@ -1,53 +1,89 @@
-# Kōbō Workshop
+# 工房 Kōbō
 
-Welcome to Kōbō, my portfolio, here you will find almost everything about me, going through my philosophy, hobbies, featured 
-projects and my work experience.
+> Quiet design. Strong engineering.
 
-Everything crafted and developed with precision, following the Wabi-Sabi philosophy, using a japanese inspired theme for both
-light and dark main themes
+**Kōbō** (工房, *workshop / atelier*) is the personal portfolio of **Ignacio Barraza**, a backend and full stack software engineer from Iquique, Chile.
 
-# What to find here?
+A workshop is where things are made by hand, slowly and with care. That is the idea behind this site: a calm, minimal space that shows how I build software. It is guided by *wabi-sabi*, the Japanese appreciation for simplicity, restraint and honest materials.
 
-Here you will know more about me as a backend software engineer and as a person
+🌐 [codebynacho.com](https://codebynacho.com)
 
-Some things that you should find:
+## What you'll find
 
-1. Featured Projects
-2. What kind of philosophy do I follow in my daily life
-3. About me
-4. Mi journey through this world called software engineering
-5. Some easter egg (you should try konami code, who knows)
-6. My hobbies and what I do outside coding
-7. And a way to contact me and make your ideas come to life 
+1. **Home**: an introduction, selected projects, my engineering philosophy, experience, what I'm currently working on and how to reach me
+2. **Projects**: things I've built, with their stack and context
+3. **Experience**: my journey through software engineering
+4. **Expertise**: the tools and areas I work with
+5. **About**: who I am beyond the code
+6. **Contact**: let's build something together
 
-## 🚀 Project Structure
+## Design
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Wabi-sabi aesthetic**: washi-paper tones, sumi-ink darks and a single vermilion accent
+- **Light and dark themes** that follow your system preference and remember your choice
+- **Typography**: Cormorant Garamond for headings, Geist for body text and Geist Mono for labels and details
+- **Accessible by default**: WCAG AA color contrast, semantic landmarks and keyboard-friendly navigation
+- **Design tokens** for color, spacing, typography, motion, borders and layering, organized in CSS cascade layers
+
+## Tech stack
+
+- [Astro](https://astro.build) for the site itself, mostly static with very little client-side JavaScript
+- [React](https://react.dev), used only where an interactive island is needed
+- Plain CSS with custom properties and `@layer`, no CSS framework
+- [Lucide](https://lucide.dev) for icons
+- [Fontsource](https://fontsource.org) for self-hosted variable fonts
+- `@astrojs/sitemap` and a custom `Seo` component for metadata and Open Graph
+
+## Project structure
 
 ```text
 /
-├── public/
+├── public/                 # Static assets (favicon, robots.txt)
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/
+│   │   ├── content/        # Page content blocks (ProjectRow, ExperienceEntry, Principle…)
+│   │   ├── footer/         # Footer sections
+│   │   ├── navbar/         # Navigation, theme toggle, mobile menu
+│   │   ├── primitives/     # Small reusable UI pieces (Link, Tag, Kbd, IconButton…)
+│   │   └── shared/         # SEO, section headers, shared interfaces
+│   ├── data/               # Site content: projects, links, personal info
+│   ├── layouts/            # BaseLayout
+│   ├── pages/              # Routes: index, about, projects, experience, expertise, contact
+│   ├── styles/
+│   │   ├── base/           # Reset, global styles, grid, fonts, components
+│   │   └── tokens/         # Design tokens (color, spacing, typography, motion…)
+│   └── config.ts           # Global site config (title, description, URL, SEO defaults)
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Most of the content lives in `src/data/` and `src/config.ts`, so updating projects, links or personal info doesn't require touching any component.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Getting started
 
-Any static assets, like images, can be placed in the `public/` directory.
+Requires **Node.js ≥ 22.12** and [pnpm](https://pnpm.io).
 
-## 🧞 Commands
+```bash
+pnpm install
+pnpm dev
+```
 
-All commands are run from the root of the project, from a terminal:
+| Command        | Action                                        |
+| :------------- | :-------------------------------------------- |
+| `pnpm install` | Install dependencies                          |
+| `pnpm dev`     | Start the dev server at `localhost:4321`      |
+| `pnpm build`   | Build the production site to `./dist/`        |
+| `pnpm preview` | Preview the production build locally          |
+| `pnpm astro …` | Run Astro CLI commands (`astro check`, etc.)  |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Roadmap
+
+- [ ] Command palette (`Ctrl + K`)
+- [ ] Hidden easter egg (maybe try the Konami code someday 👀)
+- [ ] Hobbies section: what I do outside of coding
+- [ ] Open Graph images per page
+
+## Author
+
+**Ignacio Barraza**, Backend & Full Stack Software Engineer
+[GitHub](https://github.com/ignaciobarraza) · [LinkedIn](https://www.linkedin.com/in/ignaciobarraza)
