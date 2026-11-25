@@ -43,6 +43,11 @@ export interface ProjectsInterface extends ProjectRowInterface {
   general_stack: string[]
   featured: boolean
   status: string
+  overview: string
+  problem: string[]
+  approach: string[]
+  implementation: string[]
+  outcome: string[]
 }
 
 export interface NavLinkInterface {
