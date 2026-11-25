@@ -1,5 +1,5 @@
 :root {
-  --color-accent: #c4472d;
+  --color-accent: #c0442a;
   --color-accent-hover: #a93a25;
   --color-on-accent: #fdfcfa;
 
@@ -18,11 +18,11 @@
 
   --text-primary: #1c1c1a;
   --text-secondary: #5f5d57;
-  --text-muted: #89867e;
+  --text-muted: #6e6b63;
 
   --color-shadow-overlay: rgb(20 20 18 / var(--opacity-shadow-washi));
 
-  --shadow-overlay: 0 24px 64px −24px var(--color-shadow-overlay);
+  --shadow-overlay: 0 24px 64px -24px var(--color-shadow-overlay);
 }
 
 [data-theme='dark'] {
@@ -34,9 +34,9 @@
 
   --text-primary: #f1efe9;
   --text-secondary: #b8b4aa;
-  --text-muted: #817d73;
+  --text-muted: #8f8b81;
 
   --color-shadow-overlay: rgb(0 0 0 / var(--opacity-shadow-sumi));
 
-  --shadow-overlay: 0 24px 64px −24px var(--color-shadow-overlay);
+  --shadow-overlay: 0 24px 64px -24px var(--color-shadow-overlay);
 }

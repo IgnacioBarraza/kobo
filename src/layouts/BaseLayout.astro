@@ -20,12 +20,6 @@ const props = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <SEO {...props} />
-    <script is:inline>
-      const savedTheme = localStorage.getItem('theme')
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme)
-      }
-    </script>
   </head>
   <body>
     <NavBar />

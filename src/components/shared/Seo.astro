@@ -44,15 +44,20 @@ const imageUrl = new URL(image, siteConfig.url).toString()
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <script is:inline>
-  const savedTheme = localStorage.getItem('theme')
+  ;(() => {
+    let savedTheme = null
+    try {
+      savedTheme = localStorage.getItem('theme')
+    } catch {}
 
-  const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
-    .matches
-    ? 'dark'
-    : 'light'
+    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
+      .matches
+      ? 'dark'
+      : 'light'
 
-  document.documentElement.dataset.theme =
-    savedTheme === 'light' || savedTheme === 'dark'
-      ? savedTheme
-      : preferredTheme
+    document.documentElement.dataset.theme =
+      savedTheme === 'light' || savedTheme === 'dark'
+        ? savedTheme
+        : preferredTheme
+  })()
 </script>
