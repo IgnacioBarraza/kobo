@@ -1,0 +1,19 @@
+---
+interface Props {
+  item: string
+  name: string
+  description: string
+  divider: boolean
+}
+
+const { item, name, description, divider } = Astro.props
+---
+
+<div class="principle-container">
+  <div class="principle">
+    <span class="principle-item">{item}</span>
+    <span class="principle-name">{name}</span>
+    <span class="principle-desc">{description}</span>
+  </div>
+  {divider ? <div class="principle-divisor"></div> : <div></div>}
+</div>
