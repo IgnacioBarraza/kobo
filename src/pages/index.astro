@@ -11,6 +11,7 @@ import ProjectRow from '@components/content/ProjectRow.astro'
 import { Site } from '../data/kobo'
 import Principle from '@components/content/Principle.astro'
 import ExperienceEntry from '@components/content/ExperienceEntry.astro'
+import CurrentlyItem from '@components/content/CurrentlyItem.astro'
 
 const link: LinkInterface[] = [
   {
@@ -90,6 +91,36 @@ const experienceEntry = [
 ]
 
 const selectedProjects = Projects
+
+const currently = [
+  {
+    label: 'BUILDING',
+    values: ['Kōbō']
+  },
+  {
+    label: 'LEARNING',
+    values: ['Japanese', 'AWS']
+  },
+  {
+    label: 'EXPLORING',
+    values: ['Robotics', 'Cloud Systems', 'Distributed Systems']
+  }
+]
+
+const letsBuildLinks: LinkInterface[] = [
+  {
+    label: "Let's talk",
+    href: '/contact/'
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/IgnacioBarraza'
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/ignaciobarraza'
+  }
+]
 ---
 
 <BaseLayout>
@@ -192,5 +223,28 @@ const selectedProjects = Projects
       </div>
     </section>
     <div class="separation-line"></div>
+    <section class="currently-section">
+      <p class="label">06 / CURRENTLY</p>
+      <div class="separation-line"></div>
+      <div class="currently-items">
+        {currently.map((item) => (
+          <CurrentlyItem label={item.label} values={item.values} />
+        ))}
+      </div>
+      <span class="currently-last-updated">LAST UPDATED · NOVEMBER 2026</span>
+    </section>
+    <div class="separation-line"></div>
+    <section class="lets-build-section">
+      <p class="label">07 / LET'S BUILD</p>
+      <p class="lets-build-title">Have something worth building?</p>
+      <div class="lets-build-links">
+        {letsBuildLinks.map((link) => (
+          <Link
+            link={link}
+            type={link.label === "Let's talk" ? 'internal' : 'external'}
+          />
+        ))}
+      </div>
+    </section>
   </div>
 </BaseLayout>

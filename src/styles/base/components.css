@@ -405,6 +405,26 @@
   gap: var(--spacing-2);
 }
 
+.currently-item-container {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.currently-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-xs);
+  color: var(--text-muted);
+}
+
+.currently-value {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-lg);
+  color: var(--text-primary);
+}
+
 @media (max-width: 860px) {
   .palette-trigger {
     display: none;

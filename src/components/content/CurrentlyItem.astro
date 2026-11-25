@@ -1,0 +1,15 @@
+---
+interface Props {
+  label: string
+  values: string[]
+}
+
+const { label, values } = Astro.props
+---
+
+<div class="currently-item-container">
+  <span class="currently-label">{label}</span>
+  {values.map((value) => (
+    <span class="currently-value">{value}</span>
+  ))}
+</div>
