@@ -1,14 +1,8 @@
 ---
 import Tag from '@components/primitives/Tag.astro'
-import { undefined } from 'astro:schema'
+import type { ExperienceEntryInterface } from '@components/shared/interfaces'
 
-interface Props {
-  period: string
-  role: string
-  company: string
-  desc?: string
-  stack?: string[]
-}
+interface Props extends ExperienceEntryInterface {}
 
 const { period, role, company, desc, stack } = Astro.props
 ---

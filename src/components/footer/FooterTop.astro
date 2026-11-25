@@ -1,18 +1,7 @@
 ---
-import type { Link as LinkInterface } from '@components/shared/interfaces'
 import { Site } from '../../data/kobo'
 import Link from '@components/primitives/Link.astro'
-
-const links: LinkInterface[] = [
-  {
-    href: 'https://github.com/IgnacioBarraza',
-    label: 'Github'
-  },
-  {
-    href: Site.linkedin,
-    label: 'LinkedIn'
-  }
-]
+import { MediaLinks } from '../../data/links'
 ---
 
 <div class="kobo-footer">
@@ -21,7 +10,7 @@ const links: LinkInterface[] = [
     <span class="footer-tagline">{Site.tagline}</span>
   </div>
   <div class="footer-action-btns">
-    {links.map((link) => (
+    {MediaLinks.map((link) => (
       <Link link={link} type="external quiet" />
     ))}
   </div>

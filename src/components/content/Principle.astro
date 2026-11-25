@@ -1,10 +1,7 @@
 ---
-interface Props {
-  item: string
-  name: string
-  description: string
-  divider: boolean
-}
+import type { PrinciplesInterface } from '@components/shared/interfaces'
+
+interface Props extends PrinciplesInterface {}
 
 const { item, name, description, divider } = Astro.props
 ---

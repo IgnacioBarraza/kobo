@@ -1,17 +1,24 @@
 ---
-import type { Link as LinkInterface } from '@components/shared/interfaces'
+import type {
+  CurrentlyInterface,
+  ExperienceEntryInterface,
+  LinkInterface,
+  PrinciplesInterface,
+  ProjectsInterface,
+  SectionHeaderInterface
+} from '@components/shared/interfaces'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Link from '@components/primitives/Link.astro'
 import { siteConfig } from '@config'
-import SectionHeader, {
-  type SectionHeaderInterface
-} from '@components/shared/SectionHeader.astro'
+import SectionHeader from '@components/shared/SectionHeader.astro'
 import { Projects } from '../data/projects'
 import ProjectRow from '@components/content/ProjectRow.astro'
 import { Site } from '../data/kobo'
+import { MediaLinks } from '../data/links'
 import Principle from '@components/content/Principle.astro'
 import ExperienceEntry from '@components/content/ExperienceEntry.astro'
 import CurrentlyItem from '@components/content/CurrentlyItem.astro'
+import Label from '@components/shared/Label.astro'
 
 const link: LinkInterface[] = [
   {
@@ -41,25 +48,28 @@ const experienceSection: SectionHeaderInterface = {
   }
 }
 
-const principles = [
+const principles: PrinciplesInterface[] = [
   {
     item: 'i',
     name: 'Clarity',
-    description: 'Make complexity understandable.'
+    description: 'Make complexity understandable.',
+    divider: true
   },
   {
     item: 'ii',
     name: 'Craft',
-    description: 'Build with intention.'
+    description: 'Build with intention.',
+    divider: true
   },
   {
     item: 'iii',
     name: 'Improvement',
-    description: 'Keep learning, keep refining.'
+    description: 'Keep learning, keep refining.',
+    divider: false
   }
 ]
 
-const experienceEntry = [
+const experienceEntry: ExperienceEntryInterface[] = [
   {
     period: '2024 - NOW',
     role: 'Full Stack Developer',
@@ -90,9 +100,9 @@ const experienceEntry = [
   }
 ]
 
-const selectedProjects = Projects
+const selectedProjects: ProjectsInterface[] = Projects
 
-const currently = [
+const currently: CurrentlyInterface[] = [
   {
     label: 'BUILDING',
     values: ['Kōbō']
@@ -112,14 +122,7 @@ const letsBuildLinks: LinkInterface[] = [
     label: "Let's talk",
     href: '/contact/'
   },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/IgnacioBarraza'
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/ignaciobarraza'
-  }
+  ...MediaLinks
 ]
 ---
 
@@ -128,7 +131,7 @@ const letsBuildLinks: LinkInterface[] = [
     <section class="software-engineer-section">
       <div class="grid">
         <div class="hero-body">
-          <p class="label">01 / SOFTWARE ENGINEER</p>
+          <Label label="01 / SOFTWARE ENGINEER" />
           <h1 class="hero-headline">Building things with intention.</h1>
           <p class="hero-name">Ignacio Barraza</p>
           <p class="hero-desc">{siteConfig.description}</p>
@@ -148,7 +151,7 @@ const letsBuildLinks: LinkInterface[] = [
     <section class="introduction-section">
       <div class="grid">
         <div class="introduction-body">
-          <p class="label">02 / INTRODUCTION</p>
+          <Label label="02 / INTRODUCTION" />
           <p class="introduction-desc">
             I'm Ignacio, a software engineer from Chile who enjoys turning
             complex problems into simple, maintainable software.
@@ -172,17 +175,17 @@ const letsBuildLinks: LinkInterface[] = [
       <div class="separation-line"></div>
       {selectedProjects.map((project) => (
         <ProjectRow
-          projectName={project.name}
-          projectKind={project.kind}
-          projectStack={project.general_stack}
-          projectYear={project.year}
-          projectSlug={project.slug}
+          name={project.name}
+          kind={project.kind}
+          stack={project.general_stack}
+          year={project.year}
+          slug={project.slug}
         />
       ))}
     </section>
     <div class="separation-line"></div>
     <section class="philosophy-section">
-      <p class="label">04 / ENGINEERING PHILOSOPHY</p>
+      <Label label="04 / ENGINEERING PHILOSOPHY" />
       <div class="philosophy-grid">
         <p class="philosophy-statement">{Site.tagline}</p>
         <p class="philosophy-support">
@@ -197,7 +200,7 @@ const letsBuildLinks: LinkInterface[] = [
             item={principle.item}
             name={principle.name}
             description={principle.description}
-            divider={index - 2 ? true : false}
+            divider={principle.divider}
           />
         ))}
       </div>
@@ -211,31 +214,29 @@ const letsBuildLinks: LinkInterface[] = [
       <div class="experience-component">
         <div class="separation-line"></div>
         {experienceEntry.map((entry) => (
-          <>
-            <ExperienceEntry
-              period={entry.period}
-              role={entry.role}
-              company={entry.company}
-              stack={entry.stack}
-            />
-          </>
+          <ExperienceEntry
+            period={entry.period}
+            role={entry.role}
+            company={entry.company}
+            stack={entry.stack}
+          />
         ))}
       </div>
     </section>
     <div class="separation-line"></div>
     <section class="currently-section">
-      <p class="label">06 / CURRENTLY</p>
+      <Label label="06 / CURRENTLY" />
       <div class="separation-line"></div>
       <div class="currently-items">
         {currently.map((item) => (
           <CurrentlyItem label={item.label} values={item.values} />
         ))}
       </div>
-      <span class="currently-last-updated">LAST UPDATED · NOVEMBER 2026</span>
+      <Label label="LAST UPDATED · NOVEMBER 2026" />
     </section>
     <div class="separation-line"></div>
     <section class="lets-build-section">
-      <p class="label">07 / LET'S BUILD</p>
+      <Label label="07 / LET'S BUILD" />
       <p class="lets-build-title">Have something worth building?</p>
       <div class="lets-build-links">
         {letsBuildLinks.map((link) => (

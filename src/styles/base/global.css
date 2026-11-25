@@ -168,12 +168,6 @@ body {
   padding-bottom: var(--spacing-12);
 }
 
-.currently-last-updated {
-  font-family: var(--font-mono);
-  font-size: var(--text-body-xs);
-  color: var(--text-muted);
-}
-
 .lets-build-title {
   padding-top: var(--spacing-8);
   font-family: var(--font-display);

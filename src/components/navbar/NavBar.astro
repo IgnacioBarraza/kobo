@@ -1,17 +1,9 @@
 ---
-import type { Link } from '@components/shared/interfaces'
 import NavLink from './NavLink.astro'
 import ThemeToggle from './ThemeToggle.astro'
 import PaletteTrigger from '@components/primitives/PaletteTrigger.astro'
 import Kbd from '@components/primitives/Kbd.astro'
-
-const links: Link[] = [
-  { label: 'Projects', href: '/projects/' },
-  { label: 'Experience', href: '/experience/' },
-  { label: 'Expertise', href: '/expertise/' },
-  { label: 'About', href: '/about/' },
-  { label: 'Contact', href: '/contact/' }
-]
+import { NavLinks } from '../../data/links'
 
 const currentPath = Astro.url.pathname
 ---
@@ -22,7 +14,7 @@ const currentPath = Astro.url.pathname
     <span class="kobo-secondary">工房</span>
   </a>
   <nav class="nav-bar">
-    {links.map((link) => (
+    {NavLinks.map((link) => (
       <NavLink link={link} currentPath={currentPath} />
     ))}
   </nav>

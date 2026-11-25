@@ -1,10 +1,7 @@
 ---
-import type { Link } from '@components/shared/interfaces'
+import type { NavLinkInterface } from '@components/shared/interfaces'
 
-interface Props {
-  link: Link
-  currentPath: string
-}
+interface Props extends NavLinkInterface {}
 
 const { link, currentPath } = Astro.props
 
@@ -15,8 +12,6 @@ const normalizePath = (path: string) => {
 }
 
 const isActive = normalizePath(currentPath) === normalizePath(link.href)
-
-console.log(isActive)
 ---
 
 <a

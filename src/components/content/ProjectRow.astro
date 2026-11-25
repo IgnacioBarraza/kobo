@@ -1,30 +1,24 @@
 ---
 import { ICON_SIZE } from '@components/shared/icon-sizes'
+import type { ProjectRowInterface } from '@components/shared/interfaces'
 import { MoveRight } from '@lucide/astro'
 
-interface Props {
-  projectName: string
-  projectKind: string
-  projectStack: string[]
-  projectYear: string
-  projectSlug: string
-}
+interface Props extends ProjectRowInterface {}
 
-const { projectName, projectKind, projectStack, projectYear, projectSlug } =
-  Astro.props
+const { name, kind, stack, year, slug } = Astro.props
 ---
 
-<a href={`/projects/${projectSlug}/`} class="project-row-container">
-  <span class="project-name">{projectName}</span>
+<a href={`/projects/${slug}/`} class="project-row-container">
+  <span class="project-name">{name}</span>
   <div class="project-info">
-    <span class="project-kind">{projectKind}</span>
+    <span class="project-kind">{kind}</span>
     <div class="project-stack">
-      {projectStack.map((stack) => (
+      {stack.map((stack) => (
         <span>{stack}</span>
       ))}
     </div>
   </div>
   <span class="project-year">
-    {projectYear} <MoveRight class="year-icon" size={ICON_SIZE.xs} />
+    {year} <MoveRight class="year-icon" size={ICON_SIZE.xs} />
   </span>
 </a>

@@ -1,8 +1,7 @@
 ---
-interface Props {
-  label: string
-  values: string[]
-}
+import type { CurrentlyInterface } from '@components/shared/interfaces'
+
+interface Props extends CurrentlyInterface {}
 
 const { label, values } = Astro.props
 ---

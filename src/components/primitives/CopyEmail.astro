@@ -1,12 +1,9 @@
 ---
 import { ICON_SIZE } from '@components/shared/icon-sizes'
 import { Check, Copy } from '@lucide/astro'
+import type { CopyEmailInterface } from '@components/shared/interfaces'
 
-interface Props {
-  label: string
-  email: string
-  copiedLabel: string
-}
+interface Props extends CopyEmailInterface {}
 
 const { label, email, copiedLabel } = Astro.props
 ---
